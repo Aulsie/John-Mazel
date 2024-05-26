@@ -418,7 +418,11 @@ transition: 0.4s ease;
   
 }
 
-.socbtn2 :hover {
+.socbtn2{
+  transition: 0.3s ease;
+
+}
+.socbtn2:hover {
   transition: 0.3s ease;
   transform: scale(1.2) rotate(-6deg);
   filter: drop-shadow(0 0 10px rgba(255, 175, 54, 0.466));
