@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
+@import url(https://db.onlinewebfonts.com/c/836a54e6f5313f999bb7066c762ea893?family=Silka+Mono);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #000000;
+  font-family: "Silka Mono", monospace;
+}
+
+/* Container that holds all the category cards */
+.gallery-album {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  gap: 10px;
+
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #f1f1f13f;
+    position: relative;
+    overflow: hidden;
+
+    /* Background images for each category card */
+    &:nth-of-type(1) {
+      background: url("https://images.pexels.com/photos/8185815/pexels-photo-8185815.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=279.825&fit=crop&h=453.05") no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("https://images.pexels.com/photos/2088202/pexels-photo-2088202.jpeg?auto=compress&cs=tinysrgb&w=600") no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("https://images.pexels.com/photos/3949755/pexels-photo-3949755.jpeg?auto=compress&cs=tinysrgb&w=600") no-repeat 30% / cover;
+    }
+    &:nth-of-type(4) {
+      background: url("https://images.pexels.com/photos/3848184/pexels-photo-3848184.jpeg?auto=compress&cs=tinysrgb&w=600") no-repeat 50% / cover;
+    }
+    &:nth-of-type(5) {
+      background: url("https://images.pexels.com/photos/3082764/pexels-photo-3082764.jpeg?auto=compress&cs=tinysrgb&w=600") no-repeat 58% / cover;
+    }
+    &:nth-of-type(6) {
+      background: url("https://images.pexels.com/photos/2834917/pexels-photo-2834917.jpeg?auto=compress&cs=tinysrgb&w=600") no-repeat 50% / cover;
+    }
+
+    /* Content inside each category card */
+    .content {
+      font-size: 1rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.521) 0%, rgba(255, 255, 255, 0) 100%);
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+    }
+
+    /* Hover effect for category cards */
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #fcfcfc67;
+      transform: translatey(-30px);
+    }
+
+    /* Show content on hover */
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
